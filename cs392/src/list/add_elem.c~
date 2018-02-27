@@ -1,0 +1,18 @@
+
+#include "../../include/list.h"
+
+
+void add_elem(void* elem, struct s_node** head){
+	if(elem==NULL){
+		return;
+	}
+	NODE n = (NODE)malloc(sizeof(struct s_node));
+	n->elem = elem;
+	n->prev = NULL;
+	n->next = (*head);
+	if(n->next!=NULL){
+	n->next->prev = n;
+	}
+	(*head) = n;
+
+}

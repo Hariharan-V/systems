@@ -1,0 +1,40 @@
+#include "../include/my.h"
+#include "../include/list.h"
+#include <limits.h>
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+	int main ()
+	{
+	 
+	  //  int g=0;
+	  // g = strcmp("3",NULL,20);
+	  /* printf("%i\n",g);
+	  char x[] = "hello";
+	  char y[30];
+	  char *d;
+	  char *xL;
+	  //  d= my_strncpy(NULL,NULL,-7);
+	  printf("%s\n",(d=strcpy(y,x)));
+	  //printf("\n%i",strcmp("hellot",NULL));*/
+	  // double  g = 10.1;
+	  //my_printf("hello %i",g);
+	  //char**x =  my_str2vect("hello\n\n\n\thow\t\n\n\n are\t you");
+	  struct s_node* node = NULL;
+	  
+	  struct s_node **head=&node;
+	  char buf[256];
+	  int x = read(0,buf,255);
+	  buf[255]='\0';
+	  arraylist_add(buf,head);
+	  while(buf[x-1]!='\n'){
+	    
+	    x = read(0,buf,255);
+	    arraylist_add(buf,head);
+	  } 
+	  arraylist_print(head);
+	  
+	}
+	
+

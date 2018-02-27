@@ -1,0 +1,28 @@
+#include "../../include/list.h"
+
+
+void* remove_node(struct s_node** node){
+	NODE n = *node;
+	NODE prev = n->prev;
+	NODE next = n->next;
+	if(n==NULL){
+	  return NULL;
+	}
+	if(prev!=NULL){
+	prev->next = next;
+	}
+	if(next!= NULL){
+	next->prev = prev;
+	}
+	if(prev==NULL){
+		(*node) = next;
+	}
+	void* l = n->elem;
+	free(n);
+	(n)=NULL;
+	
+	return l;
+
+
+
+}

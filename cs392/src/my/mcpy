@@ -1,0 +1,8 @@
+CC      := gcc                                                                
+DEBUG   :=-g                                                                     
+
+all: 
+	$(CC) $(DEBUG) -c my_digits.c my_strindex.c my_int.c my_strlen.c my_num_base.c my_strrindex.c my_alpha.c my_revstr.c my_char.c my_str.c 
+	ar -rc libmy.a  my_digits.o my_strindex.o my_int.o my_strlen.o my_num_base.o my_strrindex.o my_alpha.o my_revstr.o my_char.o my_str.o 
+	ranlib libmy.a
+	mv libmy.a ../../lib

@@ -1,0 +1,15 @@
+CC      := gcc -std=c99                                                                
+DEBUG   :=-g                                                                    
+LFLAGS :=  -Wall -Werror --pedantic
+SOURCES:= 
+all: $(SOURCES)
+	$(CC) $(DEBUG)  $(LFLAGS) -c $(SOURCES)
+	ar -rc libmy.a $(OBJ)
+	ranlib libmy.a
+	mv libmy.a ../../lib
+re: fclean all
+fclean: clean 
+	rm -f ../../lib/libmy.a
+clean: 
+	rm -f $(OBJ)
+

@@ -1,0 +1,16 @@
+#include "../../include/my.h"
+#include <assert.h>
+int my_atoi(char* str){
+	assert(str!=NULL);
+	 int number = 0;
+	int sign = 1;
+	while(str[0]<'0'||str[0]>'9'){
+		if(str[0]=='-') {sign*=-1;}
+		str++;
+	}
+	while(str[0]>='0'&&str[0]<='9'){
+		number = number*10+(int)(str[0]-'0')*sign;
+		str++;
+	}
+	return number;
+}

@@ -1,0 +1,24 @@
+#include "../../include/my.h"
+#include <stdarg.h>
+#include <stdio.h>
+int my_printf(char *format,...){
+  // int num = 0;
+  int x = 0;
+  va_list arg;
+  va_start(arg,format);
+  while(format[x]!='\0'){
+    if(format[x]=='%'&&(format[x+1]=='i'||format[x+1]=='d')){
+      int f = va_arg(arg,int);
+      my_int(f);
+      x+=2;
+    }else if(format[x]=='%'&&(format[x+1]=='u')){
+      }
+
+    else{
+    
+      my_char(format[x]);
+      x++;
+    }
+  }
+  return 1;
+}

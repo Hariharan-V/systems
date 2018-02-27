@@ -1,0 +1,29 @@
+#include "../../include/my.h"
+#include <assert.h>
+char *my_strnconcat(char *a, char *b,int n){
+  n = (n>0)?n:0;
+  if(a==NULL &&b==NULL){
+    return NULL;
+  }
+  if(b==NULL){
+    return my_strdup(a);
+  }
+  int lenb = my_strlen(b);
+  int lena = my_strlen(a);
+  if(a==NULL){
+    if(lenb<=n){
+      return my_strdup(b);
+    }
+    char*c=(char*)malloc(n+1);
+    c[n]='\0';
+    return my_strncpy(c,b,n);
+  }
+  if(lenb<=n){
+    return my_strconcat(a,b);
+  }
+  char*c=(char*)malloc(lena+n+1);
+  my_strncpy(c,a,lena);
+  my_strncpy(&c[lena],b,n);
+  c[lena+n]='\0';
+  return c;
+}

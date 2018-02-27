@@ -1,0 +1,23 @@
+#include "../../include/list.h"
+
+
+
+
+void* remove_last(struct s_node** s){
+	NODE x = (*s);
+	if(x==NULL){
+	  return NULL;
+	}
+	while(x->next!=NULL){
+		x = x->next;
+	}
+	if(x->prev!=NULL){
+	x->prev->next = NULL;
+	} else{
+		(*s)=NULL;
+	}
+	void* elem = x->elem;
+	free(x);
+	return elem;
+
+}

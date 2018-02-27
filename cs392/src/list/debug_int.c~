@@ -1,0 +1,23 @@
+#include "../../include/list.h"
+void debug_int(struct s_node* head){
+	NODE s = head;
+	while(s!=NULL){
+		my_str("(");
+		if(s->prev ==NULL){
+			my_str("NULL");
+		}else{
+			my_int(*(int*)(s->prev->elem));
+		}
+		my_str("<-");
+		my_int(*(int*)(s->elem));
+		my_str("->");
+	 if(s->next ==NULL){
+			my_str("NULL");
+		}else{
+			my_int(*(int*)(s->next->elem));
+		}
+	 my_str(") ");
+	 s = s->next;
+	}
+
+}

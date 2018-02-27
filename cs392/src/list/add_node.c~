@@ -1,0 +1,20 @@
+#include "../../include/list.h"                                                                                       
+//typedef struct s_node* node; 
+
+void add_node(struct s_node* node, struct s_node** head){
+	if(node==NULL||node->elem ==NULL){
+		return;
+	}
+	if(head==NULL){
+	head = &node;
+	node->next = NULL;
+	node->prev = NULL;
+	}
+	node->prev = NULL;
+	node->next = (*head);
+	if(node->next!=NULL){
+	node->next->prev = node;
+	}
+	(*head) = node;
+	
+}

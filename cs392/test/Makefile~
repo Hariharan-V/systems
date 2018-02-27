@@ -1,0 +1,8 @@
+CC	:= gcc -std=c99
+DEBUG	:=-g  
+LDFLAGS	:= $(DEBUG) -I ../include -L../lib/ -llist -lmy
+
+all: mytest
+
+mytest:	testlist.c 
+	$(CC)   testlist.c  $(LDFLAGS)

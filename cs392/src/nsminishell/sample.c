@@ -1,0 +1,24 @@
+#include <ncurses.h>
+#include <stdlib.h>
+
+int main(){
+  initscr();
+  noecho();
+  raw();
+  nonl();
+  keypad(stdscr,TRUE);
+
+  char ch;
+  while((ch=getch())!=13){
+    
+    int y,x;
+    getyx(curscr,y,x);
+    move(y+1,0);
+    printw("hello");
+    refresh();
+  }
+  echo();
+  endwin();
+  
+
+}

@@ -1,0 +1,11 @@
+#include "../../include/my.h"
+char *my_strconcat(char *a, char *b){
+	if(a==NULL&&b==NULL){return NULL;}
+	int len1 = my_strlen(a)+1;
+	int len2 = my_strlen(b)+1;
+	char *c = (char *) malloc(sizeof(char)*(len1+len2));
+	my_strcpy(c,a);
+	my_strcat(c,b);
+	return c;
+
+}

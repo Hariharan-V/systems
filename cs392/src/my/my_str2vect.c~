@@ -1,0 +1,16 @@
+#include "../../include/my.h"
+char **my_str2vect(char* str){
+  int len = my_strlen(x);
+  char** vect = (char**)malloc(sizeof(char*)*len);
+  
+  for(int x = 0; x<len; x++){
+    if(str[x]==' '){
+      continue;
+    }
+    if(str[x]=='\'&& str[x+1]=='n'||str[x+1]=='t'){
+       x++;
+       continue;
+    }
+  
+return vect;
+}

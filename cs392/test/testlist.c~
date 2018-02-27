@@ -1,0 +1,43 @@
+#include "../include/list.h"
+#include "../include/my.h"
+//#include <stdio.h>
+#include "dynstr.h"
+int main(){
+  /* NODE node=NULL;
+  NODE* head= &node;
+  char * x = "hello";
+  append(new_node(x,NULL,NULL), head);
+  add_elem(x, head);
+  traverse_string(*head);
+  remove_last(head);
+  //empty_list(head);kjihgfedcba
+  //add_elem(x,head);
+   my_str("\n");
+  traverse_string(*head);
+  empty_list(head);
+  // 
+  int y = 10;
+  add_elem(&y,head);
+  remove_node_at(head,42);
+  //traverse_int(*head);
+  debug_int(*head);
+  //debug_int(*head);
+  */
+ 
+  
+  DSTR str = new_dynstr();
+  DSTR str2 = new_dynstr();
+  int g = 0;
+  for(int y = 0; y<=10;y++){
+  for(char x = 'a'; x<='z'; x++){
+    g++;
+    dynstr_at(str,0,x);
+    dynstr(str2,x);
+  }
+  }
+  insert_str_at(str,str2,0);
+  my_str(str->elem);
+  // my_str("\n");
+  //cut(str,NULL,0,25);
+  // my_str(str->elem);
+}
